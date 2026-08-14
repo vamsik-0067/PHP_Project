@@ -1,0 +1,44 @@
+services:
+  web:
+    build: .
+    container_name: devtrack-web
+    ports:
+      - "8080:80"
+    environment:
+      DB_HOST: db
+      DB_NAME: devtrack
+      DB_USER: devtrack
+      DB_PASSWORD: devtrack_pass
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - devtrack
+
+  db:
+    image: mysql:8.4
+    container_name: devtrack-db
+    environment:
+      MYSQL_DATABASE: devtrack
+      MYSQL_USER: devtrack
+      MYSQL_PASSWORD: devtrack_pass
+      MYSQL_ROOT_PASSWORD: root_pass
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - devtrack
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-udevtrack", "-pdevtrack_pass"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  mysql_data:
+
+networks:
+  devtrack:
+    driver: bridge

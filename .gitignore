@@ -1,0 +1,23 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# PHP
+vendor/
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# Generated files
+*.zip
+
+
