@@ -8,7 +8,7 @@ $users=$pdo->query("
  (SELECT COUNT(*) FROM tasks t WHERE t.assignee_id=u.id AND t.status='completed') done_count
  FROM users u ORDER BY u.id
 ")->fetchAll();
-include 'partials/header.php';
+include_once 'partials/header.php';
 ?>
 <div class="page-title"><div><div class="eyebrow">PEOPLE</div><h1>Team</h1><p>Manage project contributors and see workload.</p></div></div>
 <div class="team-grid">
@@ -21,4 +21,4 @@ include 'partials/header.php';
 </div>
 <?php endforeach; ?>
 </div>
-<?php include 'partials/footer.php'; ?>
+<?php include_once 'partials/footer.php'; ?>
