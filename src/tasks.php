@@ -47,4 +47,4 @@ include_once 'partials/header.php';
 </div>
 <?php endforeach; ?>
 </div></div>
-<?php include 'partials/footer.php'; ?>
+<?php include_once 'partials/footer.php'; ?>
