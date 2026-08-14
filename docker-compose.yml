@@ -1,6 +1,6 @@
 services:
   web:
-    build: .
+    image: vamsikothapalli/phpproject:devtrackapp
     container_name: devtrack-web
     ports:
       - "8080:80"
