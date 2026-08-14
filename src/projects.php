@@ -68,4 +68,4 @@ include_once 'partials/header.php';
  <?php endforeach; ?>
  </tbody></table></div>
 </div>
-<?php include 'partials/footer.php'; ?>
+<?php include_once 'partials/footer.php'; ?>
