@@ -29,7 +29,7 @@ $rows=$pdo->query("
  FROM projects p LEFT JOIN users u ON u.id=p.owner_id ORDER BY p.id DESC
 ")->fetchAll();
 
-include 'partials/header.php';
+include_once 'partials/header.php';
 ?>
 <div class="page-title">
  <div><div class="eyebrow">WORKSPACE</div><h1>Projects</h1><p>Plan, track and deliver your team's work.</p></div>
