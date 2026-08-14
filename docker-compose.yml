@@ -3,7 +3,7 @@ services:
     image: vamsikothapalli/phpproject:devtrackapp
     container_name: devtrack-web
     ports:
-      - "8080:80"
+      - "8081:80"
     environment:
       DB_HOST: db
       DB_NAME: devtrack
