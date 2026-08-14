@@ -23,7 +23,7 @@ $projectRows = $pdo->query("
     ORDER BY p.id DESC LIMIT 5
 ")->fetchAll();
 
-include 'partials/header.php';
+include_once 'partials/header.php';
 ?>
 <div class="page-title">
     <div>
