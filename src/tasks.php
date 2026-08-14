@@ -17,7 +17,7 @@ $projects=$pdo->query("SELECT id,name FROM projects ORDER BY name")->fetchAll();
 $users=$pdo->query("SELECT id,name FROM users ORDER BY name")->fetchAll();
 $rows=$pdo->query("SELECT t.*,p.name project,u.name assignee FROM tasks t JOIN projects p ON p.id=t.project_id LEFT JOIN users u ON u.id=t.assignee_id ORDER BY t.id DESC")->fetchAll();
 
-include 'partials/header.php';
+include_once 'partials/header.php';
 ?>
 <div class="page-title"><div><div class="eyebrow">EXECUTION</div><h1>Tasks</h1><p>Track every task from backlog to completion.</p></div><button class="btn primary" onclick="document.getElementById('taskForm').classList.toggle('hidden')">+ New Task</button></div>
 
