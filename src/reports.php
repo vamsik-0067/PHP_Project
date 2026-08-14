@@ -5,7 +5,7 @@ $pdo=db();
 $status=$pdo->query("SELECT status,COUNT(*) count FROM tasks GROUP BY status")->fetchAll();
 $priority=$pdo->query("SELECT priority,COUNT(*) count FROM tasks GROUP BY priority")->fetchAll();
 $projectStats=$pdo->query("SELECT p.name,COUNT(t.id) total,SUM(t.status='completed') done FROM projects p LEFT JOIN tasks t ON t.project_id=p.id GROUP BY p.id ORDER BY total DESC")->fetchAll();
-include 'partials/header.php';
+include_once 'partials/header.php';
 ?>
 <div class="page-title"><div><div class="eyebrow">INSIGHTS</div><h1>Reports</h1><p>Understand delivery progress at a glance.</p></div></div>
 <div class="report-grid">
