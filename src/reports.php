@@ -15,4 +15,4 @@ include_once 'partials/header.php';
 <div class="panel"><div class="panel-head"><h2>Project delivery</h2></div><div class="table-wrap"><table><thead><tr><th>Project</th><th>Total Tasks</th><th>Completed</th><th>Progress</th></tr></thead><tbody>
 <?php foreach($projectStats as $p): $pct=$p['total']?round($p['done']/$p['total']*100):0; ?><tr><td><strong><?= e($p['name']) ?></strong></td><td><?= $p['total'] ?></td><td><?= $p['done'] ?></td><td><div class="mini-progress"><span style="width:<?= $pct ?>%"></span></div><?= $pct ?>%</td></tr><?php endforeach; ?>
 </tbody></table></div></div>
-<?php include 'partials/footer.php'; ?>
+<?php include_once 'partials/footer.php'; ?>
