@@ -54,7 +54,7 @@ include_once 'partials/header.php';
 
 <div class="panel">
  <div class="panel-head"><h2>All projects</h2><span class="muted"><?= count($rows) ?> projects</span></div>
- <div class="table-wrap"><table><thead><tr><th>Project</th><th>Status</th><th>Priority</th><th>Owner</th><th>Progress</th><th>Due</th><th></th></tr></thead><tbody>
+ <div class="table-wrap"><table><caption>List of all projects, including their status, priority, owner, progress, and due date.</caption><thead><tr><th>Project</th><th>Status</th><th>Priority</th><th>Owner</th><th>Progress</th><th>Due</th><th></th></tr></thead><tbody>
  <?php foreach($rows as $p): $pct=$p['total_tasks']?round($p['done_tasks']/$p['total_tasks']*100):0; ?>
  <tr>
   <td><strong><?= e($p['name']) ?></strong><br><small><?= e($p['description']) ?></small></td>
